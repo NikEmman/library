@@ -42,21 +42,45 @@ function addBookToLibrary() {
 const addBtn = document.getElementById("addBook")
 addBtn.addEventListener("click", () => {
     form.classList.toggle("hidden");
+    addBtn.textContent = form.classList.contains("hidden") ? "+ Add book" : "Hide";
 })
 
 function appendBooks() {
     const cardContainer = document.getElementById("card-container")
-    let i;
     cardContainer.innerHTML = ""
     for (let i = 0; i < myLibrary.length; i++) {
         cardContainer.innerHTML += `<div data-index-number= ${i} class="card">
             <h3>Book Title: ${myLibrary[i].title}</h3>
             <p>Author: ${myLibrary[i].author}</p>
             <p>Number of Pages: ${myLibrary[i].pages}</p>
-            <p>Have read it: ${myLibrary[i].pages}</p>
+            <p id=read-${i}>Have read it: ${myLibrary[i].read}</p>
             <p>Comment: ${myLibrary[i].comments}</p>
+            <button id="readBtn">Change read status</button>
+            <button id="delBook">X</button>
         </div>`
     }
 }
 
-//next is implement a delete book button on each card, will remove dom item and myLibrary index
+const cardContainer = document.getElementById("card-container");
+
+cardContainer.addEventListener("click", (e) => {
+    if (e.target.id === "delBook") {
+        const parent = e.target.parentNode;
+        const index = parseInt(parent.getAttribute("data-index-number"));
+
+        myLibrary.splice(index, 1);
+
+        parent.remove();
+    }
+});
+
+cardContainer.addEventListener("click", (e) => {
+    const parent = e.target.parentNode;
+    const index = parseInt(parent.getAttribute("data-index-number"));
+
+    if (e.target.id === "readBtn") {
+        let read = document.getElementById(`read-${index}`);
+        read.textContent = read.textContent === "Have read it: Yes" ? "Have read it: No" : "Have read it: Yes";
+        myLibrary[index].read = myLibrary[index].read === "Yes" ? "No" : "Yes"
+    }
+});
