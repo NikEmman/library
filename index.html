@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <h1>My Library</h1>
+    <button id="addBook"> + Add book to library</button>
+    <form class="hidden" action="/" method="post">
+
+        <label for="title">Title</label><br>
+        <input id="title" name="title" type="text"><br>
+        <label for="author">Author</label><br>
+        <input id="author" name="author" type="text"><br>
+        <label for="pages">Pages</label><br>
+        <input id="pages" name="pages" type="number"><br>
+        <fieldset>
+            <legend> Have you read this book?</legend>
+            <label for="read">Yes</label>
+            <input id="read" name="read" type="radio" value="Yes">
+            <label for="read">No</label>
+            <input id="read" name="read" type="radio" value="No">
+
+        </fieldset><br>
+        <label for="comments">Comments</label><br>
+        <input id="comments" name="comments" type="text"><br><br>
+        <input id="submit" type="submit" value="Add book">
+    </form>
+
+</body>
+
+</html>
