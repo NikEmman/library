@@ -30,6 +30,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
     event.preventDefault();
     addBookToLibrary();
     form.reset();
+    appendBooks();
 });
 
 
@@ -42,3 +43,20 @@ const addBtn = document.getElementById("addBook")
 addBtn.addEventListener("click", () => {
     form.classList.toggle("hidden");
 })
+
+function appendBooks() {
+    const cardContainer = document.getElementById("card-container")
+    let i;
+    cardContainer.innerHTML = ""
+    for (let i = 0; i < myLibrary.length; i++) {
+        cardContainer.innerHTML += `<div data-index-number= ${i} class="card">
+            <h3>Book Title: ${myLibrary[i].title}</h3>
+            <p>Author: ${myLibrary[i].author}</p>
+            <p>Number of Pages: ${myLibrary[i].pages}</p>
+            <p>Have read it: ${myLibrary[i].pages}</p>
+            <p>Comment: ${myLibrary[i].comments}</p>
+        </div>`
+    }
+}
+
+//next is implement a delete book button on each card, will remove dom item and myLibrary index
