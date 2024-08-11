@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel='stylesheet' href='https://cdn.simplecss.org/simple-v1.css'>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple-v1.css" />
     <script src="index.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>My Library</h1>
-    <button id="addBook"> + Add book</button>
+    <button id="addBook">+ Add book</button>
     <form class="hidden" action="/" method="post">
-
-        <label for="title">Title</label><br>
-        <input id="title" name="title" type="text"><br>
-        <label for="author">Author</label><br>
-        <input id="author" name="author" type="text"><br>
-        <label for="pages">Pages</label><br>
-        <input id="pages" name="pages" type="number"><br>
-        <fieldset>
-            <legend> Have you read this book?</legend>
-            <label for="read">Yes</label>
-            <input id="read" name="read" type="radio" value="Yes">
-            <label for="read">No</label>
-            <input id="read" name="read" type="radio" value="No">
-
-        </fieldset><br>
-        <label for="comments">Comments</label><br>
-        <input id="comments" name="comments" type="text"><br><br>
-        <input id="submit" type="submit" value="Add book">
+      <label for="title">Title</label><br />
+      <input id="title" name="title" type="text" /><br />
+      <label for="author">Author</label><br />
+      <input id="author" name="author" type="text" /><br />
+      <label for="pages">Pages</label><br />
+      <input id="pages" name="pages" type="number" /><br />
+      <fieldset>
+        <legend>Have you read this book?</legend>
+        <label for="yes">Yes</label>
+        <input id="yes" name="read" type="radio" value="Yes" />
+        <label for="no">No</label>
+        <input id="no" name="read" type="radio" value="No" />
+      </fieldset>
+      <br />
+      <label for="comments">Comments</label><br />
+      <input id="comments" name="comments" type="text" /><br /><br />
+      <input id="submit" type="submit" value="Add book" />
     </form>
     <div id="card-container">
-        <div data-index-number="0" class="card">
-            <h3>Book Title: Hopeless</h3>
-            <p>Author: Myself</p>
-            <p>Number of Pages: 240</p>
-            <p id="read-0">Have read it: Yes</p>
-            <p>Comment: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eligendi asperiores quo</p>
-            <button id="readBtn">Change read status</button>
-            <button id="delBook">X</button>
-        </div>
+      <div data-index-number="0" class="card">
+        <h3>Book Title: Hopeless</h3>
+        <p>Author: Myself</p>
+        <p>Number of Pages: 240</p>
+        <p id="read-0">Have read it: Yes</p>
+        <p>
+          Comment: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Esse, eligendi asperiores quo
+        </p>
+        <button id="readBtn">Change read status</button>
+        <button id="delBook">X</button>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
