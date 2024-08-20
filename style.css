@@ -1,19 +1,37 @@
 .hidden {
-    display: none;
+  display: none;
 }
 
 #card-container {
-    padding-top: 4em;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    gap: 1em;
+  padding-top: 4em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 1em;
 }
 
 .card {
-    padding: 1em;
-    box-shadow: 3px 3px 10px #ffb300;
+  padding: 1em;
+  box-shadow: 3px 3px 10px #ffb300;
 }
 
 #addBook {
-    width: 250px;
+  width: 250px;
+}
+.error {
+  border: 2px orange solid;
+  color: #ffb300;
+  border-radius: 5px;
+  padding: 0.5em;
+  width: fit-content;
+}
+input:invalid + span::after {
+  content: "✖";
+  padding-left: 5px;
+  color: red;
+}
+
+input:valid + span::after {
+  content: "✓";
+  padding-left: 5px;
+  color: green;
 }

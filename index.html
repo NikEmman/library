@@ -14,21 +14,61 @@
     <button id="addBook">+ Add book</button>
     <form class="hidden" action="/" method="post">
       <label for="title">Title</label><br />
-      <input id="title" name="title" type="text" /><br />
+      <input
+        id="title"
+        name="title"
+        type="text"
+        minlength="3"
+        required
+      /><span></span>
+      <div id="titleError" class="hidden"></div>
+      <br />
       <label for="author">Author</label><br />
-      <input id="author" name="author" type="text" /><br />
+      <input
+        id="author"
+        name="author"
+        type="text"
+        minlength="3"
+        required
+      /><span></span>
+      <div id="authorError" class="hidden"></div>
+      <br />
       <label for="pages">Pages</label><br />
-      <input id="pages" name="pages" type="number" /><br />
+      <input
+        id="pages"
+        name="pages"
+        type="number"
+        min="1"
+        max="10000"
+        required
+      /><span></span>
+      <div id="pagesError" class="hidden"></div>
+      <br />
       <fieldset>
         <legend>Have you read this book?</legend>
         <label for="yes">Yes</label>
-        <input id="yes" name="read" type="radio" value="Yes" />
+        <input id="yes" name="read" type="radio" value="Yes" required />
         <label for="no">No</label>
-        <input id="no" name="read" type="radio" value="No" />
+        <input
+          id="no"
+          name="read"
+          type="radio"
+          value="No"
+          required
+        /><span></span>
+        <div id="readError" class="hidden"></div>
       </fieldset>
       <br />
       <label for="comments">Comments</label><br />
-      <input id="comments" name="comments" type="text" /><br /><br />
+      <input
+        id="comments"
+        name="comments"
+        type="text"
+        minlength="3"
+        required
+      /><span></span>
+      <div id="commentsError" class="hidden"></div>
+      <br /><br />
       <input id="submit" type="submit" value="Add book" />
     </form>
     <div id="card-container">
