@@ -1,12 +1,23 @@
 const myLibrary = []
 const form = document.querySelector("form");
 
-function Book(title, author, pages, read, comments) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.comments = comments
+// function Book(title, author, pages, read, comments) {
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+//     this.comments = comments
+// }
+
+class Book {
+
+    constructor(title, author, pages, read, comments) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.comments = comments
+    }
 }
 function getFormValues() {
     let title = document.getElementById("title").value;
