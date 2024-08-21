@@ -24,14 +24,16 @@ function getFormValues() {
   }
   return { title, author, pages, readValue, comments };
 }
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-document.getElementById("submit").addEventListener("click", function (event) {
-  if (checkError()) {
-    event.preventDefault();
+  if (!formValid()) {
+    showFormError();
   } else {
     addBookToLibrary();
     form.reset();
     appendBooks();
+    addBtn.click();
   }
 });
 
@@ -181,12 +183,25 @@ const fieldset = document.querySelector("fieldset");
 const yesRadio = document.querySelector('input[name="read"][value="Yes"]');
 const noRadio = document.querySelector('input[name="read"][value="No"]');
 const radioIsValid = yesRadio.checked || noRadio.checked;
-function checkError() {
+
+// form.addEventListener("submit", (event) => {
+//   if (!formValid()) {
+//     showError();
+//     event.preventDefault();
+//   }
+// });
+function formValid() {
   return (
-    showPagesError() ||
-    showTitleError() ||
-    showAuthorError() ||
-    showCommentsError() ||
+    pages.validity.valid &&
+    title.validity.valid &&
+    author.validity.valid &&
+    comments.validity.valid &&
     radioIsValid //fixme
   );
+}
+function showFormError() {
+  showTitleError();
+  showAuthorError();
+  showCommentsError();
+  showPagesError();
 }
